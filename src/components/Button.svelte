@@ -1,4 +1,4 @@
-<script>
+<script lang="typescript">
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -13,6 +13,6 @@
     </button>
 </main>
 
-<style>
+<style lang="scss">
 
 </style>
