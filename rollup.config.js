@@ -4,6 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
+import autoPreprocess from 'svelte-preprocess';
+import { scss, typescript} from 'svelte-preprocess';
+
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
@@ -22,7 +25,22 @@ export default {
 			// a separate file - better for performance
 			css: css => {
 				css.write('public/build/bundle.css');
-			}
+			},
+			/**
+			 * Auto preprocess supported languages with
+			 * '<template>'/'external src files' support
+			 **/
+			preprocess: autoPreprocess({ /* options */ }),
+			/**
+			 * It is also possible to manually enqueue
+			 * stand-alone processors
+			 * */
+			preprocess: [
+				typescript({
+					tsconfigFile: './tsconfig.json'
+				}),
+				scss({ /* scss options */ }),
+			]
 		}),
 
 		// If you have external dependencies installed from

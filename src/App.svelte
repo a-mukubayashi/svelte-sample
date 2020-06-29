@@ -1,9 +1,9 @@
-<script>
+<script lang="typescript">
 	import Sample from './components/Sample.svelte';
 	import Button from './components/Button.svelte';
 	import {count, increment, decrement} from './store/store.js';
 
-	export let name;
+	export let name: string;
 
 	function handleButtonClick(event) {
 		alert("ぼたんくりっく");
@@ -19,12 +19,13 @@
 	{#if $count % 2 == 0}
 		<div>count が偶数</div>
 	{/if}
-
-
 	</div>
+	<ul>
+		<li>リスト１</li>
+	</ul>
 </main>
 
-<style>
+<style lang="scss">
 	main {
 		text-align: center;
 		padding: 1em;
@@ -42,6 +43,12 @@
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
+		}
+	}
+
+	ul {
+		li {
+			color: red;
 		}
 	}
 </style>
