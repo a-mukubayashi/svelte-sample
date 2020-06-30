@@ -6,7 +6,8 @@
 	import { timer } from './timer';
 	import { onMount } from 'svelte';
 
-	export let name;
+	export let name: string;
+	export let title: string = "aaa";
 
 	let a: number = 42;
 	let current: number = 0;
@@ -32,7 +33,7 @@
 	</div>
 
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Sample name="aaa" /><Button on:click={handleButtonClick} />
+	<Sample name={title} /><Button on:click={handleButtonClick} />
 	<div>
 	The count is {$count} <button on:click={increment}>+1</button><button on:click={decrement}>-1</button>
 	{#if $count % 2 == 0}
