@@ -2,6 +2,7 @@
 	import Sample from './components/Sample.svelte';
 	import Button from './components/Button.svelte';
 	import {count, increment, decrement} from './store/store.js';
+	import { timer } from './timer';
 
 	export let name;
 
@@ -12,6 +13,9 @@
 
 <main>
 	<h1>Hello {name}!</h1>
+
+	<h2>Count is {$timer}</h2>
+
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<Sample name="aaa" /><Button on:click={handleButtonClick} />
 	<div>

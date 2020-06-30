@@ -5,6 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
 import svelte from 'rollup-plugin-svelte';
 import {terser} from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 const isDev = process.env.NODE_ENV === 'development';
 const port = 3000;
@@ -12,14 +13,14 @@ const port = 3000;
 const plugins = [
 	svelte({
 	  dev: isDev,
-	  extensions: ['.svelte'],
+	  extensions: ['.svelte']
 	}),
+	typescript(),
 	resolve({
 	  browser: true,
 	  dedupe: ['svelte'],
 	}),
 	commonjs(),
-	// injects your bundles into index page
 	html({
 	  template: 'src/index.html',
 	  fileName: 'index.html',
@@ -41,7 +42,7 @@ if (isDev) {
 }
 
 module.exports = {
-	input: 'src/main.js',
+	input: 'src/main.ts',
 	output: {
 	  name: 'bundle',
 	  file: 'dist/bundle.js',

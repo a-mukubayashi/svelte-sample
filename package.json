@@ -9,6 +9,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-typescript": "^5.0.1",
     "del-cli": "^3.0.1",
     "rollup": "^1.20.0",
     "rollup-plugin-html2": "^1.1.0",
@@ -16,7 +17,9 @@
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
