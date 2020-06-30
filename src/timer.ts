@@ -1,3 +1,4 @@
+// sample store
 import { readable } from 'svelte/store';
 
 const timer = readable(0, (set) => {

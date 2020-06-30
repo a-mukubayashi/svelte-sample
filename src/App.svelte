@@ -13,7 +13,6 @@
 	let current: number = 0;
 	let sum: number = 0;
 
-	//onMount(() => timer.subscribe(val => (current = val)));
 	R(timer, val => (current = val));
 
 	$: sum = a + current;
