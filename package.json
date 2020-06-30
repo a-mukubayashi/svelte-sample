@@ -11,6 +11,7 @@
     "@rollup/plugin-node-resolve": "^7.0.0",
     "@rollup/plugin-typescript": "^5.0.1",
     "del-cli": "^3.0.1",
+    "node-sass": "^4.14.1",
     "rollup": "^1.20.0",
     "rollup-plugin-html2": "^1.1.0",
     "rollup-plugin-livereload": "^1.0.0",
