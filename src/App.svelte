@@ -1,10 +1,21 @@
-<script>
+<script lang="typescript">
 	import Sample from './components/Sample.svelte';
 	import Button from './components/Button.svelte';
 	import {count, increment, decrement} from './store/store.js';
+	import { R } from './utils';
 	import { timer } from './timer';
+	import { onMount } from 'svelte';
 
 	export let name;
+
+	let a: number = 42;
+	let current: number = 0;
+	let sum: number = 0;
+
+	//onMount(() => timer.subscribe(val => (current = val)));
+	R(timer, val => (current = val));
+
+	$: sum = a + current;
 
 	function handleButtonClick(event) {
 		alert("ぼたんくりっく");
@@ -15,6 +26,8 @@
 	<h1>Hello {name}!</h1>
 
 	<h2>Count is {$timer}</h2>
+	<p>What's the meaning of life? {a}</p>
+	<p>The sum is {sum}</p>
 
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<Sample name="aaa" /><Button on:click={handleButtonClick} />

@@ -6,6 +6,7 @@ import serve from 'rollup-plugin-serve';
 import svelte from 'rollup-plugin-svelte';
 import {terser} from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import preprocess from 'svelte-preprocess';
 
 const isDev = process.env.NODE_ENV === 'development';
 const port = 3000;
@@ -13,7 +14,8 @@ const port = 3000;
 const plugins = [
 	svelte({
 	  dev: isDev,
-	  extensions: ['.svelte']
+	  extensions: ['.svelte'],
+	  preprocess: preprocess()
 	}),
 	typescript(),
 	resolve({
